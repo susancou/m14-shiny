@@ -20,22 +20,26 @@ shinyUI(navbarPage('Electoral College',
                                 plotlyOutput('map')
                               )
                             )
-                   ) 
+                   )
+        
                    
                    # Create a tabPanel to show your scatter plot
-                   
-                            # Add a titlePanel to your tab
-                   
-                            
+                   tabPanel('scatter plot',
+                                    # Add a titlePanel to your tab
+                   titlePanel('this is mine'),
                             # Create a sidebar layout for this tab (page)
-                   
-                              
+                   sidebarLayout(
                               # Create a sidebarPanel for your controls
-                   
-                                
+                   sidebarPanel(
                                 # Make a textInput widget for searching for a state in your scatter plot
-                   
-                              
-                              # Create a main panel, in which you should display your plotly Scatter plot
+                     textInput("search", label = h3("Text input")),
+                      
+                     
+                                                 # Create a main panel, in which you should display your plotly Scatter plot
+                     mainPanel(
+                       plotlyOutput('scatter')
+                     )
                               
 ))
+)
+)
